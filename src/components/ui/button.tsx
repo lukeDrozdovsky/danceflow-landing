@@ -16,8 +16,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "relative text-white bg-[linear-gradient(120deg,var(--neon-purple),var(--hot-pink)_60%,var(--electric-blue))] bg-[length:200%_200%] bg-left hover:bg-right transition-[background-position,transform,box-shadow] duration-500 glow-primary hover:scale-[1.03]",
-        ghostGlass: "glass-panel text-foreground hover:border-[color:var(--neon-purple)] hover:text-white transition-all",
+        hero: "relative text-white bg-[linear-gradient(120deg,var(--hot-pink),var(--electric-blue)_55%,var(--neon-purple))] bg-[length:200%_200%] bg-left hover:bg-right transition-[background-position,transform,box-shadow] duration-500 glow-primary hover:scale-[1.03]",
+        ghostGlass: "glass-panel text-foreground hover:border-[color:var(--neon-purple)] hover:text-foreground transition-all",
       },
       size: {
         default: "h-9 px-4 py-2",
