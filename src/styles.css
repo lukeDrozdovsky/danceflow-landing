@@ -62,34 +62,38 @@
   --color-neon-purple: var(--neon-purple);
   --color-electric-blue: var(--electric-blue);
   --color-hot-pink: var(--hot-pink);
-  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --color-nav-dark: var(--nav-dark);
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.875rem;
-  --background: oklch(0.14 0.03 280);
-  --foreground: oklch(0.98 0.01 280);
-  --card: oklch(0.18 0.04 280);
-  --card-foreground: oklch(0.98 0.01 280);
-  --popover: oklch(0.18 0.04 280);
-  --popover-foreground: oklch(0.98 0.01 280);
-  --primary: oklch(0.65 0.28 305);
-  --primary-foreground: oklch(0.99 0.005 280);
-  --secondary: oklch(0.22 0.05 280);
-  --secondary-foreground: oklch(0.98 0.01 280);
-  --muted: oklch(0.22 0.04 280);
-  --muted-foreground: oklch(0.72 0.04 280);
-  --accent: oklch(0.7 0.24 230);
-  --accent-foreground: oklch(0.99 0.005 280);
+  --radius: 1rem;
+  /* Warm peach-cream backdrop matching the app */
+  --background: oklch(0.96 0.03 50);
+  --foreground: oklch(0.18 0.04 320);
+  --card: oklch(0.99 0.01 60);
+  --card-foreground: oklch(0.18 0.04 320);
+  --popover: oklch(0.99 0.01 60);
+  --popover-foreground: oklch(0.18 0.04 320);
+  --primary: oklch(0.7 0.21 25);
+  --primary-foreground: oklch(0.99 0.005 60);
+  --secondary: oklch(0.95 0.025 40);
+  --secondary-foreground: oklch(0.22 0.04 320);
+  --muted: oklch(0.95 0.02 40);
+  --muted-foreground: oklch(0.42 0.04 320);
+  --accent: oklch(0.65 0.22 340);
+  --accent-foreground: oklch(0.99 0.005 60);
   --destructive: oklch(0.65 0.25 25);
   --destructive-foreground: oklch(0.98 0.01 280);
-  --border: oklch(0.3 0.05 285 / 0.5);
-  --input: oklch(0.25 0.05 285);
-  --ring: oklch(0.65 0.28 305);
-  --neon-purple: oklch(0.65 0.28 305);
-  --electric-blue: oklch(0.72 0.22 230);
-  --hot-pink: oklch(0.7 0.27 350);
+  --border: oklch(0.85 0.03 30 / 0.7);
+  --input: oklch(0.92 0.025 40);
+  --ring: oklch(0.65 0.22 340);
+  /* Accent palette pulled from the app's coral→pink→violet gradient */
+  --neon-purple: oklch(0.62 0.24 305);     /* violet */
+  --electric-blue: oklch(0.66 0.25 340);   /* magenta-pink */
+  --hot-pink: oklch(0.72 0.21 30);         /* coral */
+  --nav-dark: oklch(0.16 0.04 330);        /* deep eggplant header */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -163,13 +167,13 @@
 }
 
 @utility glass-panel {
-  background: color-mix(in oklab, var(--card) 60%, transparent);
+  background: color-mix(in oklab, var(--card) 75%, transparent);
   backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid color-mix(in oklab, var(--neon-purple) 18%, transparent);
+  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
 }
 
 @utility gradient-text {
-  background-image: linear-gradient(120deg, var(--neon-purple), var(--electric-blue) 55%, var(--hot-pink));
+  background-image: linear-gradient(120deg, var(--hot-pink), var(--electric-blue) 55%, var(--neon-purple));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -179,13 +183,12 @@
   position: relative;
   background:
     linear-gradient(var(--card), var(--card)) padding-box,
-    linear-gradient(135deg, var(--neon-purple), var(--electric-blue), var(--hot-pink)) border-box;
+    linear-gradient(135deg, var(--hot-pink), var(--electric-blue), var(--neon-purple)) border-box;
   border: 1px solid transparent;
 }
 
 @utility glow-primary {
   box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--neon-purple) 40%, transparent),
-    0 10px 40px -10px color-mix(in oklab, var(--neon-purple) 70%, transparent),
-    0 20px 60px -20px color-mix(in oklab, var(--hot-pink) 50%, transparent);
+    0 10px 30px -10px color-mix(in oklab, var(--hot-pink) 55%, transparent),
+    0 20px 60px -20px color-mix(in oklab, var(--neon-purple) 45%, transparent);
 }
