@@ -41,12 +41,14 @@ export function HeroSection() {
           </div>
 
           <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            {["Bez karty kredytowej", "Wdrożenie w 24h", "Wsparcie 7 dni w tygodniu"].map((item) => (
-              <li key={item} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-[var(--electric-blue)]" />
-                {item}
-              </li>
-            ))}
+            {["Bez karty kredytowej", "Wdrożenie w 24h", "Wsparcie 7 dni w tygodniu"].map(
+              (item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-[var(--electric-blue)]" />
+                  {item}
+                </li>
+              ),
+            )}
           </ul>
         </div>
 
@@ -62,10 +64,9 @@ function HeroScreenshot() {
       <div className="absolute -inset-6 rounded-[2rem] bg-[linear-gradient(135deg,var(--hot-pink),var(--electric-blue),var(--neon-purple))] opacity-30 blur-2xl" />
       <div className="gradient-border relative overflow-hidden rounded-[1.75rem] p-1.5 shadow-2xl">
         <img
-          src={appScreenshot.url}
-          alt="Panel administracyjny Twoja Szkoła Tańca — grafik zajęć"
-          className="block w-full rounded-[1.4rem]"
-          loading="eager"
+          src="/grafik.png"
+          alt="DanceFlow App Dashboard"
+          className="w-full rounded-[1.5rem] border border-white/10 shadow-2xl"
         />
       </div>
     </div>
